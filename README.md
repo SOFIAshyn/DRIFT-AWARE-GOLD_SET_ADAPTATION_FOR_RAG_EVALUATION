@@ -162,5 +162,3 @@ To turn the prototype into a production-grade benchmark workflow, the design doc
 - **Stage 8 — Human validation UI.** Minimal Streamlit/FastAPI app over `adapted_gold_drafts.json`; quality gates on class, answer correctness, source support, ambiguity, suitability; writes `adapted_gold_validated.json` with inter-annotator agreement measured offline.
 - **Stage 9 — Benchmark partitions.** Three frozen JSON sets: `gold_original/` (CRAG, unchanged), `gold_adapted/` (validated additions, versioned per quarter), `holdout/` (untouched tracing-like slice, leakage-protected).
 - **Stage 10 — RAG eval harness.** Config-driven; loads any RAG via `{module, callable}` returning `{'answer', 'retrieved'}`; reports recall@k, MRR, NDCG@k, answer correctness (LLM-judge optional), hallucination rate, unsupported-answer rate, per-class breakdown; compares `gold_original` vs `gold_original + gold_adapted` deltas.
-
-Open questions tracked at the bottom of [`docs/drift_aware_gold_set_pipeline.md`](docs/drift_aware_gold_set_pipeline.md): clustering algorithm choice, annotation budget, ground-truth answer source, holdout refresh policy, multilingual scope.
