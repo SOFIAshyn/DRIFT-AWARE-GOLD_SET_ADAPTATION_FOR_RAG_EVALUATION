@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.env
+
+# Excluded paths
+data/
+src/eval/
+src/drift/annotation_ui/
+
+# Secrets
+*api_key*
+*.env
