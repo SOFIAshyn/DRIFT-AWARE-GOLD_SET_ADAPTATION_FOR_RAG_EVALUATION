@@ -146,6 +146,7 @@ Run the harness over (i) original gold vs tracing and (ii) gold + adapted drafts
 | Adversarial AUC, adapted drafts only vs Chatbot Arena | 0.863 |
 | AUC delta (orig → orig + adapted) | **−0.041** |
 | Top drift classes (JS divergence, OpenAI) | `open`, `math_code`, `food`, `gaming` |
+| AUC delta (CRAG original → adapted drafts only) | **−0.134** |
 | Top gap-clusters by `gap_score` (sample themes) | math word-problems, AI-future speculation, role-play prompts, weather, chit-chat |
 
 Original CRAG is near-trivially separable from tracing (AUC 0.997). Adding the 434 adapted drafts shifts AUC by **−0.041** — directionally correct, but a bigger annotation budget is needed to move the needle further.
@@ -154,7 +155,7 @@ Original CRAG is near-trivially separable from tracing (AUC 0.997). Adding the 4
 
 ## Conclusions and further work
 
-The implemented stages (1–7, plus adversarial validation as the improvement signal) already demonstrate that production traffic drifts far enough from a curated benchmark to make the static gold set unreliable, and that cluster-aware enrichment closes that gap measurably. AUC drops from 0.997 to 0.955 after adding 434 drafts; the direction is right and the methodology generalizes to bigger annotation budgets.
+The implemented stages (1–7, plus adversarial validation as the improvement signal) already demonstrate that production traffic drifts far enough from a curated benchmark to make the static gold set unreliable, and that cluster-aware enrichment closes that gap measurably. Adversarial AUC drops from 0.997 (CRAG original vs tracing) to 0.955 when the 434 adapted drafts are appended to the gold set — a delta of **−0.041**. The drafts on their own score 0.863 against tracing (delta of **−0.134** vs CRAG original), confirming the new entries are substantially closer to production traffic than the curated baseline; in the combined set that signal is diluted because the 434 drafts are mixed with 2706 original CRAG items. The direction is right and the methodology generalizes to bigger annotation budgets — scaling drafts toward the same order of magnitude as the base set should drag the combined AUC further toward 0.5.
 
 To turn the prototype into a production-grade benchmark workflow, the design doc reserves three follow-up stages:
 
