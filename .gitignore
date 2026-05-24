@@ -9,6 +9,7 @@ __pycache__/
 data/
 src/eval/
 src/drift/annotation_ui/
+docs/drift_aware_gold_set_pipeline.md
 
 # Secrets
 *api_key*
