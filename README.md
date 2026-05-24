@@ -4,8 +4,6 @@
 
 A pipeline that keeps a RAG benchmark aligned with live production traffic. Uses **CRAG** (curated QA) as the gold set and **Chatbot Arena** (real-user dialogues) as the tracing data.
 
-Full design lives in [`docs/drift_aware_gold_set_pipeline.md`](docs/drift_aware_gold_set_pipeline.md).
-
 ---
 
 ## Why
