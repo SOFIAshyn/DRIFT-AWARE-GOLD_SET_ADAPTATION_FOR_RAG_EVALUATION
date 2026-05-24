@@ -39,8 +39,6 @@ Static QA benchmarks decay as production traffic shifts. New entities, new quest
 
 ```
 COURSE_WORK/
-├── docs/
-│   └── drift_aware_gold_set_pipeline.md   # design doc
 ├── notebooks/
 │   └── drift_report.ipynb                 # per-release drift dashboard
 ├── src/
